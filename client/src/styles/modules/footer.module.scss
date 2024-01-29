@@ -1,0 +1,53 @@
+@import '../style.scss';
+
+.wrapper{
+    background-color: $mainLight;
+    border-radius: 10px 10px 0 0 ;
+    border-top: 2px solid $borderColor;
+    margin-top: 60px;
+    .container{
+        max-width: 1280px;
+        width: 100%;
+        margin: 0 auto;
+        display: flex;
+        padding: 40px 0;
+        .logoContainer{
+            display: flex;
+            align-items: center;
+        }
+        .rightSide{
+            margin-right: 0;
+            margin-left: auto;
+            display: flex;
+            .pagesContainer{
+                display: flex;
+                flex-direction: column;
+                margin-left: auto;
+                margin-right: 30px;
+                a{
+                    text-decoration: none;
+                    color: $grey;
+                    padding: 10px;
+                }
+                a:hover{
+                    color: $mainColor;
+                }
+            }
+            .contactsContainer{
+                display: flex;
+                flex-direction: column;
+                margin: auto 0;
+                div{
+                    img{
+                        padding: 10px;
+                    }
+                }
+                .copyright{
+                    p{
+                        color: #bbb;
+                    }
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,176 @@
+@import "../style.scss";
+
+.dashProfile{
+    margin: 0 auto;
+    max-width: 600px;
+    width: 100%;
+    form{
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        .userImgContainer{
+            display: flex;
+            margin-bottom: 40px;
+            cursor: pointer;
+            img{
+                margin: 0 auto;
+                border-radius: 100%;
+                border: 3px solid $mainColor;
+                width: 160px;
+                height: 160px;
+                cursor: pointer;
+                outline: 3px solid rgb(255, 255, 255);
+                outline-offset: -6px;
+            }
+        }
+        .inputUserInfo{
+            background: $inputBg;
+            margin-bottom: 20px;
+            padding: 20px;
+            border-radius: 10px;
+            border: none;
+            outline: none;
+            width: 100%;
+        }
+        .passwordChanger{
+            display: flex;
+            position: relative;
+            align-items: center;
+            cursor: pointer;
+            .showPassBtn{
+                position: absolute;
+                right: 10px;
+                margin-top: -18px;
+            }
+        }
+        .inputUserInfo:focus{
+            outline: none;
+            box-shadow: $shadow;
+        }
+        .inputUserInfo:hover{
+            box-shadow: $shadow;
+        }
+        .saveInfo{
+            margin-top: 20px;
+            padding: 20px;
+            border-radius: 10px;
+            border: none;
+            outline: none;
+            background: $mainGradient;
+            color: $white;
+            font-size: 16px;
+            cursor: pointer;
+        }
+        .saveInfo:hover{
+            background: $white;
+            outline: 1px solid $borderColor;
+            color: $dark;
+        }
+        .newPost{
+            width: 100%;
+        }
+        .newPost button{
+            margin-top: 20px;
+            padding: 20px;
+            border-radius: 10px;
+            border: none;
+            font-size: 16px;
+            cursor: pointer;
+            width: 100%;
+            background: $white;
+            outline: 1px solid $borderColor;
+            color: $dark;
+        }
+        .newPost button:hover{
+            outline: none;
+            background: $mainGradient;
+            color: $white;
+        }
+    }
+    .accountOperation{
+        display: flex;
+        justify-content: space-between;
+        button{
+            border: none;
+            outline: none;
+            outline-offset: none;
+            background: transparent;
+            font-size: 16px;
+            color: $danger;
+            font-weight: 600;
+            padding: 20px 0;
+            cursor: pointer;
+        }
+        button:hover{
+            text-decoration: underline;
+        }
+    }
+    .updateOutput{
+        text-align: center;
+    }
+    .modal{
+            background: $white;
+            border-radius: 0.5em;
+            box-shadow: 0 10px 20px rgba(black, 0.2);
+            z-index: 9999;
+            left: 50%;
+            width: 100%;
+            position: fixed;
+            top: 50%;
+            transform: translate(-50%, -50%);
+            width: 30em;
+            text-align: left;
+            height: 300px;
+            display: flex;
+            flex-direction: column;
+            padding: 20px;     
+            .modalContainer{
+                .closeModal{
+                    display: flex;
+                    margin-left: auto;
+                    margin-right: 0;
+                    border: none;
+                    border-radius: 10px;
+                    background: transparent;
+                    margin-bottom: 20px;
+                    cursor: pointer;
+                    img{
+                        padding: 10px;
+                    }
+                }
+                .closeModal:hover{
+                    background: #dfdfdf;
+                }
+            .interaction{
+                justify-content: space-between;
+                display: flex;
+                margin-top: 60px;
+                gap: 20px;
+                button{
+                    padding: 10px;
+                    border: none;
+                    border-radius: 6px;
+                    font-size: 16px;
+                    width: 100%;
+                    text-align: center;
+                    font-weight: 300;
+                    cursor: pointer;
+                }
+                button:first-child{
+                    background: $dangerGradient;
+                    color: $white;
+                }
+                button:first-child:hover{
+                    background: $white;
+                    color: $danger;
+                    outline: 1px solid $danger;
+
+                }
+                button:last-child:hover{
+                    background: $mainGradient;
+                    color: $white;
+                }
+            }   
+        }
+    }
+}    

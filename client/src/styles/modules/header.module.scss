@@ -1,0 +1,163 @@
+@import "../style.scss";
+
+.wrapper{
+    max-width: 1280px;
+    width: 100%;
+    margin: 0 auto;
+    display: flex;
+    padding: 30px 0;
+    align-items: center;
+}
+
+.search{
+    margin-left: 160px;
+    margin-right: auto;
+    display: flex;
+    position: relative;
+    input{
+        padding: 10px;
+        padding-left: 20px;
+        border-radius: 1.5rem ;
+        background: $inputBg;
+        border: none;
+        font-size: 14px;
+        font-family: 'Mulish', sans-serif;
+        width: 300px;
+        height: 50px;
+    }
+    input:focus{
+        border: none;
+        outline: none;
+        outline-offset: none;
+    }
+    input::placeholder{
+        color: #0e0d0d;
+        font-weight: 500;
+    }
+    input:hover{
+        box-shadow: 0 0 10px rgba(150, 147, 147, 0.479);
+    }
+    button{
+        padding: 3px 16px;
+        margin: 7px;
+        background: $mainGradient;
+        border: none;
+        border-radius: 1.5rem;
+        cursor: pointer;
+        position: absolute;
+        right: 0;
+        margin-left: auto;
+        img{
+            margin-top: 4px;
+        }
+    }
+    button:hover{
+        box-shadow: 0 0 15px rgba(141, 141, 141, 0.712);
+    }
+}
+
+.dropdown{
+    margin-right: 0;
+    margin-left: auto;
+    position: relative;
+
+    .dropButton{
+        max-width: 48px;
+        height: 48px;
+        border-radius: 50%;
+        cursor: pointer;
+        img{
+            width: 100%;
+            height: 100%;
+            object-fit: cover;	
+            border-radius: 50%;
+        }
+        margin-bottom: 10px;
+    }
+    .dropdownMenu{
+        position: absolute;
+        z-index: 999;
+        right: 0;
+        background-color: #ffffff;
+        padding: 20px;
+        border-radius: 10px;
+        box-shadow: 0 0 10px rgba(214, 214, 214, 0.685);
+        .userInfo{
+            margin-bottom: 15px;
+            p{
+                padding: 2px;
+                min-width: 180px;
+            }
+        }
+        .userLinks{
+            display: flex;
+            flex-direction: column;
+            .interact{
+                display: flex;
+                gap: 5px;
+                .themeHandler{
+                    border: none;
+                    border-radius: 10px;
+                    margin-bottom: 10px;
+                    background: #cde7e5;
+                    img{
+                        padding: 6px 12px;
+                        margin-top: 3px;
+                    }
+                }
+                .themeHandler:hover{
+                    box-shadow: 0 0 15px rgba(150, 140, 140, 0.842);
+                    cursor: pointer;
+                }
+                a{
+                    text-decoration: none;
+                    padding: 8px 6px 8px 6px;
+                    color: $white;
+                    background: $mainGradient;
+                    border-radius: 6px;
+                    text-align: center;
+                    margin-bottom: 10px;
+                    width: 100%;
+                }
+                a:hover{
+                    border: 1px solid $borderColor;
+                    background: #ffffff;
+                    color: $dark;
+                }
+            }
+            .logout{
+                text-decoration: none;
+                padding: 8px 6px 8px 6px;
+                color: $white;
+                background: $dangerGradient;
+                border-radius: 6px;
+                text-align: center;
+                font-size: 16px;
+                border: none;
+                cursor: pointer;
+            }
+            .logout:hover{
+                background: #fff;
+                border: 1px solid #d41f1f;
+                color: $dark;
+            }
+        }
+    }
+}
+.dropButton:hover{
+    box-shadow: 0 0 15px rgba(92, 92, 92, 0.911);
+}
+.signin{
+    padding: 10px 30px;
+    background: $mainGradient;
+    text-decoration: none;
+    color: $white;
+    border-radius: 30px;
+    cursor: pointer;
+}
+.signin:hover{
+    background: $white;
+    color: $dark;
+    cursor: pointer;
+    outline: 1px solid $borderColor;
+}

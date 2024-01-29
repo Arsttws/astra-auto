@@ -1,0 +1,89 @@
+$borderColor: #05a1a1;
+$mainColor: #0aaa95;
+$white: #fff;
+$dark: #0e0d0d;
+$inputBg: #c1d6d64b;
+$danger: #c2253f;
+$grey: #707070;
+$mainLight: #c0fff43f;
+$shadow: 0 0 12px rgba(167, 167, 167, 0.493);
+$mainGradient: linear-gradient(156deg, rgba(41,212,161,1) 0%, rgba(24,142,166,1) 100%);
+$dangerGradient: linear-gradient(156deg, rgba(237,86,127,1) 0%, rgba(199,43,57,1) 100%);
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Nunito Sans', sans-serif;
+}
+h1{
+    font-family: 'Mulish', sans-serif;
+}
+p{
+    font-size: 14px;
+}
+.dashboardWrapper{
+    max-width: 1280px;
+    width: 100%;
+    margin: 0 auto;
+    display: flex;
+    margin-top: 60px;
+}
+input::file-selector-button {
+    font-weight: bold;
+    color: $borderColor;
+    font-family: 'Mulish', sans-serif;
+    padding: 10px 20px;
+    border-radius: 0.3rem;
+    border: none;
+    cursor: pointer;
+}
+input::file-selector-button:hover {
+    border: 1px dashed $borderColor;
+}
+.ql-editor{
+    font-size: 1.02rem;
+}
+.opacity-50{
+    opacity: .5;
+}
+.light .colorProvider{
+    background: #ffffff;
+}
+.dark .colorProvider{
+    background-color: #151027;
+}
+.colorProvider{
+    min-height: 100vh;
+}
+.post-content{
+    p{
+        margin-bottom: .5rem;
+    }
+    h1{
+        font-size: 1.5rem;
+        font-weight: 600;
+        font-family: sans-serif;
+        margin: 1.5rem 0;
+    }
+    h2{
+        font-size: 1.4rem;
+        font-family: sans-serif;
+        margin: 1.5rem 0;
+    }
+    a {
+        text-decoration: none;
+        color: #160557;
+    }
+}
+.dark .post-content{
+    p{
+        color: #fff;
+    }
+}
+.dark{
+    h1{
+        color: #fff;
+    }
+
+}
