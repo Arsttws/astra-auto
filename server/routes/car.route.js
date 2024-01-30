@@ -1,9 +1,11 @@
-import express from 'express'
-import { verifyToken } from '../utils/verifyUser.js'
-import { getCars } from '../controllers/car.controller.js'
+import express from "express";
+import { verifyToken } from "../utils/verifyUser.js";
+import { addCar, getCars, deleteCar } from "../controllers/car.controller.js";
 
-const router = express.Router()
+const router = express.Router();
 
-router.get('/getcars', verifyToken, getCars)
+router.post("/add", verifyToken, addCar);
+router.get("/getcars", verifyToken, getCars);
+router.delete("/deletecar/:carId/:userId", verifyToken, deleteCar);
 
-export default router
+export default router;
