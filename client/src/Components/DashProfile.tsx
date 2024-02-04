@@ -73,7 +73,7 @@ export default function DashProfile() {
             (snapshot.bytesTransferred / snapshot.totalBytes) * 100;
           setImageUploadProgress(progress.toFixed(0));
         },
-        (error) => {
+        () => {
           setImageUploadError(
             "Ошибка загрузки (Файл должен весить меньше 2МБ)"
           );

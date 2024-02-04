@@ -21,6 +21,8 @@ export default function Post() {
         const data = await res.json();
         if (!res.ok) {
           setError(true);
+          console.log(error);
+
           setLoading(false);
           return;
         }

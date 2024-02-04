@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { AnyIfEmpty, useSelector } from "react-redux";
+import { useSelector } from "react-redux";
 import { Link, useNavigate } from "react-router-dom";
 import close from "../assets/close.svg";
 import Comment from "./Comment";
@@ -106,7 +106,6 @@ export default function CommentSection({ postId }: any) {
         method: "DELETE",
       });
       if (res.ok) {
-        const data = await res.json();
         setComments(comments.filter((comment) => comment._id !== commentId));
       }
     } catch (error) {
