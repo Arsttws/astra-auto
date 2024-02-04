@@ -1,94 +1,97 @@
 @import "../style.scss";
 
-.wrapper{
-    max-width: 1280px;
-    width: 100%;
-    margin: 0 auto;
+.wrapper {
+  max-width: 1280px;
+  width: 100%;
+  margin: 0 auto;
 }
 
-h1{
-    margin: auto;
+h1 {
+  margin: auto;
+  margin-bottom: 20px;
+  width: fit-content;
+}
+
+.form {
+  .postMainInfo {
+    display: -webkit-flex;
+    display: flex;
+    -webkit-flex-direction: row;
+    flex-direction: row;
+    gap: 20px;
     margin-bottom: 20px;
-    width: fit-content;
+    .postTitle {
+      flex: auto;
+      height: 40px;
+      padding: 10px;
+      display: block;
+      margin: 0;
+      border: none;
+      border-radius: 0.3rem;
+      background: $inputBg;
+    }
+    .postTitle:focus {
+      outline: 0;
+      outline-offset: 0;
+      border: 1.5px solid $borderColor;
+    }
+    .category {
+      width: 11rem;
+      outline: none;
+      border: none;
+      border-radius: 0.3rem;
+      padding: 10px;
+      background: $inputBg;
+    }
+    .category:focus {
+      outline: 0;
+      outline-offset: 0;
+      border: 1.5px solid $borderColor;
+    }
+  }
+  .imgSelect {
+    display: flex;
+    width: 100%;
+    padding: 20px;
+    border: 2px dashed $borderColor;
+    border-radius: 0.3rem;
+    margin-bottom: 20px;
+    .chooseImage {
+      border: 0;
+      outline: none;
+    }
+    .addImage {
+      margin-left: auto;
+      margin-right: 0;
+      padding: 10px 20px;
+      color: $borderColor;
+      font-family: "Manrope", sans-serif;
+      border-radius: 0.3rem;
+      border: none;
+      cursor: pointer;
+    }
+  }
+  .quill {
+    margin-bottom: 20px;
+  }
+  .publish {
+    width: 100%;
+    padding: auto;
+    height: 40px;
+    background: $mainGradient;
+    border: none;
+    border-radius: 0.3rem;
+    color: #fff;
+    font-size: 16px;
+    font-family: "Manrope", sans-serif;
+  }
+  .publish:hover {
+    border: 1px solid #16a379;
+    background: $white;
+    color: #16a379;
+    cursor: pointer;
+  }
 }
-
-.form{
-    .postMainInfo{
-        display: -webkit-flex;
-        display: flex;
-        -webkit-flex-direction: row;
-        flex-direction: row;
-        gap: 20px;
-        margin-bottom: 20px;
-        .postTitle{
-            flex: auto;
-            height: 40px;
-            padding: 10px;
-            display: block;
-            margin: 0;
-            border: none;
-            border-radius: 0.3rem;
-            background: $inputBg;
-        }
-        .postTitle:focus {
-            outline: 0;
-            outline-offset: 0;
-            border: 1.5px solid $borderColor;
-          }
-        .category{
-            width: 11rem;
-            outline: none;
-            border: none;
-            border-radius: 0.3rem;
-            padding: 10px;
-            background: $inputBg;
-        }
-        .category:focus {
-            outline: 0;
-            outline-offset: 0;
-            border: 1.5px solid $borderColor;
-          }
-    }
-    .imgSelect{
-        display: flex;
-        width: 100%;
-        padding: 20px;
-        border: 2px dashed $borderColor;
-        border-radius: 0.3rem;
-        margin-bottom: 20px;
-        .chooseImage{
-            border: 0;
-            outline: none;
-        }
-        .addImage{
-            margin-left: auto;
-            margin-right: 0;
-            padding: 10px 20px;
-            color: $borderColor;
-            font-family: 'Mulish', sans-serif;
-            border-radius: 0.3rem;
-            border: none;
-            cursor: pointer;;
-        }
-    }
-    .quill{
-        margin-bottom: 20px;
-    }
-    .publish{
-        width: 100%;
-        padding: auto;
-        height: 40px;
-        background: $mainGradient;
-        border: none;
-        border-radius: 0.3rem;
-        color: #fff;
-        font-size: 16px;
-        font-family: 'Mulish', sans-serif;
-    }
-    .publish:hover{
-        border: 1px solid #16a379;
-        background: $white;
-        color: #16a379;
-        cursor: pointer;
-    }
+.uploadedImg {
+  max-width: 1280px;
 }

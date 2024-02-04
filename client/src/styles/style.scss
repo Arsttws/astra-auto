@@ -2,88 +2,182 @@ $borderColor: #05a1a1;
 $mainColor: #0aaa95;
 $white: #fff;
 $dark: #0e0d0d;
+$darkThemeBg: #251c47;
 $inputBg: #c1d6d64b;
 $danger: #c2253f;
 $grey: #707070;
 $mainLight: #c0fff43f;
 $shadow: 0 0 12px rgba(167, 167, 167, 0.493);
-$mainGradient: linear-gradient(156deg, rgba(41,212,161,1) 0%, rgba(24,142,166,1) 100%);
-$dangerGradient: linear-gradient(156deg, rgba(237,86,127,1) 0%, rgba(199,43,57,1) 100%);
+$mainGradient: linear-gradient(
+  156deg,
+  rgba(41, 212, 161, 1) 0%,
+  rgba(24, 142, 166, 1) 100%
+);
+$dangerGradient: linear-gradient(
+  156deg,
+  rgba(237, 86, 127, 1) 0%,
+  rgba(199, 43, 57, 1) 100%
+);
 
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: 'Nunito Sans', sans-serif;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Nunito Sans", sans-serif;
+  ::-webkit-scrollbar {
+    width: 6px;
+    height: 6px;
+    background: #dbdbdb;
+  }
+  ::-webkit-scrollbar-thumb {
+    border-radius: 20px;
+    background: $mainGradient;
+  }
 }
-h1{
-    font-family: 'Mulish', sans-serif;
+h1 {
+  font-family: "Manrope", sans-serif;
 }
-p{
-    font-size: 14px;
+p {
+  font-size: 14px;
 }
-.dashboardWrapper{
-    max-width: 1280px;
-    width: 100%;
-    margin: 0 auto;
-    display: flex;
-    margin-top: 60px;
+a {
+  color: $dark;
+}
+.dashboardWrapper {
+  max-width: 1280px;
+  width: 100%;
+  margin: 0 auto;
+  display: flex;
+  margin-top: 60px;
+  .sidebar {
+    aside {
+      a {
+        p {
+          font-family: "Nunito Sans", sans-serif;
+        }
+      }
+    }
+  }
 }
 input::file-selector-button {
-    font-weight: bold;
-    color: $borderColor;
-    font-family: 'Mulish', sans-serif;
-    padding: 10px 20px;
-    border-radius: 0.3rem;
-    border: none;
-    cursor: pointer;
+  font-weight: bold;
+  color: $borderColor;
+  font-family: "Manrope", sans-serif;
+  padding: 10px 20px;
+  border-radius: 0.3rem;
+  border: none;
+  cursor: pointer;
 }
 input::file-selector-button:hover {
-    border: 1px dashed $borderColor;
+  border: 1px dashed $borderColor;
 }
-.ql-editor{
-    font-size: 1.02rem;
+.ql-editor {
+  font-size: 1.02rem;
 }
-.opacity-50{
-    opacity: .5;
+.opacity-50 {
+  opacity: 0.5;
 }
-.light .colorProvider{
-    background: #ffffff;
+.light .colorProvider {
+  background: #ffffff;
 }
-.dark .colorProvider{
-    background-color: #151027;
+.dark .colorProvider,
+.dark .colorProvider div {
+  background-color: $darkThemeBg;
 }
-.colorProvider{
-    min-height: 100vh;
+.dark .colorProvider {
+  min-height: 100vh;
+  a,
+  p,
+  h1,
+  h2,
+  h3,
+  label,
+  input,
+  th,
+  ::placeholder {
+    color: $white;
+  }
+  span {
+    color: $white !important;
+  }
+  // button {
+  //   background: $mainGradient !important;
+  //   color: $white;
+  // }
+  // button:hover {
+  //   background: $darkThemeBg;
+  //   outline: 1px solid $mainColor;
+  // }
 }
-.post-content{
-    p{
-        margin-bottom: .5rem;
+.post-content {
+  p {
+    margin-bottom: 20px;
+    font-size: 16px;
+  }
+  h1 {
+    font-size: 1.5rem;
+    font-weight: 600;
+    font-family: sans-serif;
+    margin: 1.5rem 0;
+  }
+  h2 {
+    font-size: 1.4rem;
+    font-family: sans-serif;
+    margin: 1.5rem 0;
+  }
+  a {
+    text-decoration: none;
+    color: #165b9b;
+  }
+}
+.dark .post-content {
+  p {
+    color: #fff;
+  }
+}
+.dark {
+  h1 {
+    color: #fff;
+  }
+}
+@media screen and (max-width: 1280px) {
+  .dashboardWrapper {
+    max-width: 90%;
+    .sidebar {
+      aside {
+        min-width: 280px;
+      }
     }
-    h1{
-        font-size: 1.5rem;
-        font-weight: 600;
-        font-family: sans-serif;
-        margin: 1.5rem 0;
-    }
-    h2{
-        font-size: 1.4rem;
-        font-family: sans-serif;
-        margin: 1.5rem 0;
-    }
-    a {
-        text-decoration: none;
-        color: #160557;
-    }
+  }
 }
-.dark .post-content{
-    p{
-        color: #fff;
+@media screen and (max-width: 768px) {
+  .dashboardWrapper {
+    max-width: 480px;
+    margin-top: 0;
+    flex-direction: column;
+    .sidebar {
+      width: 100%;
+      margin-bottom: 20px;
+      aside {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        min-width: 0;
+        a {
+          width: 100%;
+          max-width: none;
+          min-width: 0;
+        }
+        button {
+          margin-top: 0;
+          max-width: none;
+        }
+      }
     }
+  }
 }
-.dark{
-    h1{
-        color: #fff;
-    }
-
+@media screen and (max-width: 480px) {
+  .dashboardWrapper {
+    max-width: 90%;
+  }
 }

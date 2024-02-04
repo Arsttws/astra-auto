@@ -110,9 +110,9 @@ export default function NewPost() {
             required
           >
             <option value="">Выберите категорию</option>
-            <option value="news">Новости</option>
-            <option value="post">Статьи</option>
-            <option value="discount">Акции</option>
+            <option value="Новости">Новости</option>
+            <option value="Статьи">Статьи</option>
+            <option value="Акции">Акции</option>
           </select>
         </div>
         <div className={styles.imgSelect}>
@@ -145,7 +145,14 @@ export default function NewPost() {
             <p>{imageUploadError}</p>
           </div>
         )}
-        {formData.image && <img src={formData.image} alt="uploaded-img" />}
+
+        {formData.image && (
+          <img
+            src={formData.image}
+            className={styles.uploadedImg}
+            alt="uploaded-img"
+          />
+        )}
         <ReactQuill
           className={styles.quill}
           theme="snow"

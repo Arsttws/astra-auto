@@ -1,98 +1,124 @@
-@import '../style.scss';
+@import "../style.scss";
 
-.wrapper{
-    max-width: 1280px;
-    width: 100%;
-    margin: 0 auto;
-    .container{
-        display: flex;
-        .poster{
-            margin-right: 0;
-            margin-left: auto;
-        }
-        .login{
-            margin: auto;
-            h1{
-                margin-left: 0;
-            }
-            form{
-                .formInput{
-                    display: flex;
-                    flex-direction: column;
-                    margin-bottom: 20px;
-                    input{
-                        padding: 10px;
-                        width: 280px;
-                        border-radius: 6px;
-                        border: none;
-                        background: $inputBg;
-                        margin-top: 5px;
-                    }
-                    input:hover{
-                        box-shadow: $shadow;
-                    }
-                    input:focus{
-                        box-shadow: $shadow;
-                        border: none;
-                        outline: 1px solid $borderColor;
-                    }
-                }
-                button{
-                    text-align: center;
-                    width: 100%;
-                    padding: 10px;
-                    border-radius: 6px;
-                    background: $mainGradient;
-                    border: none;
-                    color: $white;
-                    font-size: 16px;
-                    margin-top: 10px;
-                    cursor: pointer;
-                }
-                button:hover{
-                    color: $dark;
-                    outline: 1px solid $borderColor;    
-                    background: transparent;
-                }
-                .google{
-                    display: flex;
-                    align-items: center;
-                    background: $white;
-                    outline: 1px solid $mainColor;
-                    p{
-                        font-size: 16px;
-                        text-align: center;
-                        margin-left: 20px;
-                        color: $dark;
-                    }
-                    img{
-                        margin-left: 10px;
-                    }
-                }
-                .google:hover{
-                    outline: none;
-                    background: $mainGradient;
-                    p{
-                        color: $white;
-                    }
-                }
-            }
-            .signup{
-                text-align: center;
-                margin-top: 10px;
-                a{
-                    text-decoration: none;
-                    color: $mainColor;
-                }
-                a:hover{
-                    text-decoration: underline;
-                }
-            }
-            .error{
-                text-align: center;
-                margin-top: 10px;
-                max-width: 280px;
-            }
-        }
+.wrapper {
+  max-width: 1280px;
+  width: 100%;
+  margin: 0 auto;
+  .container {
+    display: flex;
+    .poster {
+      margin-right: 0;
+      margin-left: auto;
     }
+    .login {
+      margin: auto;
+      h1 {
+        margin-left: 0;
+      }
+      form {
+        .formInput {
+          display: flex;
+          flex-direction: column;
+          margin-bottom: 20px;
+          input {
+            padding: 10px;
+            width: 280px;
+            border-radius: 6px;
+            border: none;
+            background: $inputBg;
+            margin-top: 5px;
+          }
+          input:hover {
+            box-shadow: $shadow;
+          }
+          input:focus {
+            box-shadow: $shadow;
+            border: none;
+            outline: 1px solid $borderColor;
+          }
+        }
+        button {
+          text-align: center;
+          width: 100%;
+          padding: 10px;
+          border-radius: 6px;
+          background: $mainGradient;
+          border: none;
+          color: $white;
+          font-size: 16px;
+          margin-top: 10px;
+          cursor: pointer;
+        }
+        button:hover {
+          color: $dark;
+          outline: 1px solid $borderColor;
+          background: transparent;
+        }
+        .google {
+          display: flex;
+          align-items: center;
+          background: $white;
+          outline: 1px solid $mainColor;
+          p {
+            font-size: 16px;
+            text-align: center;
+            margin-left: 20px;
+            color: $dark;
+          }
+          img {
+            margin-left: 10px;
+          }
+        }
+        .google:hover {
+          outline: none;
+          background: $mainGradient;
+          p {
+            color: $white;
+          }
+        }
+      }
+      .signup {
+        text-align: center;
+        margin-top: 10px;
+        a {
+          text-decoration: none;
+          color: $mainColor;
+        }
+        a:hover {
+          text-decoration: underline;
+        }
+      }
+      .error {
+        text-align: center;
+        margin-top: 10px;
+        max-width: 280px;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 1280px) {
+  .wrapper {
+    max-width: 768px;
+    .container {
+      .poster {
+        max-width: 400px;
+        object-fit: cover;
+        img {
+          width: 100%;
+        }
+      }
+    }
+  }
+}
+@media screen and (max-width: 768px) {
+  .wrapper {
+    max-width: 480px;
+    min-height: 60vh;
+    .container {
+      .poster {
+        display: none;
+      }
+    }
+  }
 }

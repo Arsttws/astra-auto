@@ -20,7 +20,7 @@ export const addCar = async (req, res, next) => {
 export const getCars = async (req, res, next) => {
   try {
     const startIndex = parseInt(req.query.startIndex) || 0;
-    const limit = parseInt(req.query.limit) || 5;
+    const limit = parseInt(req.query.limit) || 3;
     const cars = await Car.find({
       ...(req.query.userId && { userId: req.query.userId }),
       ...(req.query.carId && { _id: req.query.carId }),

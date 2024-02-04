@@ -1,39 +1,62 @@
-import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
-import PostCard from "../Components/PostCard";
+import { useSelector } from "react-redux";
+
+import news from "../assets/news.svg";
+import info from "../assets/info.svg";
+import discounts from "../assets/discounts.svg";
+
+import styles from "../styles/modules/home.module.scss";
 
 export default function Home() {
-  const [posts, setPosts] = useState<[]>([])
+  const { currentUser } = useSelector((state: any) => state.user);
 
-  useEffect(() => {
-    const fetchPosts = async () => {
-      const res = await fetch('api/post/getposts?limit=12')
-      const data = await res.json();
-      setPosts(data.posts)
-    }
-    fetchPosts()
-  }, [])
   return (
-    <div>
-      <div>
-        <h1>Добро пожаловать</h1>
-        <Link to={'/search'}>Смотреть все</Link>
+    <div className={styles.wrapper}>
+      <div className={`${styles.advantage} ${styles.first}`}>
+        <div className={styles.info}>
+          <h2>
+            <span>01</span>Самые актуальные новости из мира авто
+          </h2>
+          <Link
+            to={
+              "/search?searchTerm=&sort=desc&category=%D0%9D%D0%BE%D0%B2%D0%BE%D1%81%D1%82%D0%B8"
+            }
+          >
+            Читать
+          </Link>
+        </div>
+        <div className={styles.image}>
+          <img src={news} alt="Новости" />
+        </div>
       </div>
-      <div>
-        {
-          posts && posts.length > 0 && (
-            <div>
-              <h2>Последние статьи</h2>
-              <div>
-                {posts.map((post: any) => (
-                  <PostCard key={post._id} post={post} />
-                ))}
-              </div>
-            </div>
-          )
-        }
+      <div className={`${styles.advantage} ${styles.second}`}>
+        <div className={styles.image}>
+          <img src={info} alt="Информация" />
+        </div>
+        <div className={styles.info}>
+          <h2>
+            <span>02</span>Вся информация о вашем авто в одном месте
+          </h2>
+          {!currentUser ? (
+            <Link to={"/sign-in"}>Войти</Link>
+          ) : (
+            <Link to={"/dashboard?tab=profile"}>Мой аккаунт</Link>
+          )}
+        </div>
       </div>
-
+      <div className={`${styles.advantage} ${styles.third}`}>
+        <div className={styles.info}>
+          <h2>
+            <span>03</span>Горящие скидки и акционные предложения
+          </h2>
+          <Link to={"/search?searchTerm=&sort=desc&category=Акции"}>
+            Искать
+          </Link>
+        </div>
+        <div className={styles.image}>
+          <img src={discounts} alt="Акции" />
+        </div>
+      </div>
     </div>
-  )
+  );
 }

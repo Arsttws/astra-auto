@@ -8,6 +8,7 @@ import {
 import { app } from "../firebase";
 import { CircularProgressbar } from "react-circular-progressbar";
 import { useNavigate } from "react-router-dom";
+import plus from "../assets/plus.svg";
 
 import styles from "../styles/modules/select.module.scss";
 
@@ -134,7 +135,9 @@ export default function Select() {
             }}
           >
             {formData.car || "Выберите марку"}
-            <span>show</span>
+            <span className={styles.plus}>
+              <img src={plus} alt="+" />
+            </span>
           </div>
           {isActive && (
             <div className={styles.dropContent}>
@@ -163,7 +166,9 @@ export default function Select() {
             }}
           >
             {formData.model || "Выберите модель"}
-            <span>show</span>
+            <span className={styles.plus}>
+              <img src={plus} alt="+" />
+            </span>
           </div>
           {isActiveModels && (
             <div className={styles.dropContent}>
@@ -185,7 +190,7 @@ export default function Select() {
           )}
         </div>
         <div className={styles.mileage}>
-          <label htmlFor="number">Введите пробег авто</label>
+          <label htmlFor="number">Введите пробег авто:</label>
           <input
             type="number"
             min={0}
@@ -197,6 +202,7 @@ export default function Select() {
           />
         </div>
         <div className={styles.year}>
+          <label htmlFor="year">Введите год авто:</label>
           <input
             type="number"
             min={1965}
@@ -236,7 +242,13 @@ export default function Select() {
             <p>{imageUploadError}</p>
           </div>
         )}
-        {formData.image && <img src={formData.image} alt="uploaded-img" />}
+        {formData.image && (
+          <img
+            src={formData.image}
+            className={styles.uploadedImg}
+            alt="uploaded-img"
+          />
+        )}
         <button className={styles.publish} type="submit">
           Добавить
         </button>

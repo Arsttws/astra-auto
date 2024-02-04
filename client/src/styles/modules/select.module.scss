@@ -1,36 +1,125 @@
+@import "../style.scss";
+
 .wrapper {
   max-width: 1280px;
   width: 100%;
   margin: 0 auto;
+  min-height: 70vh;
 }
 
 .dropdown {
-  width: 400px;
+  max-width: 1280px;
+  width: 100%;
   margin: 0 auto;
   position: relative;
   user-select: none;
+  margin-bottom: 20px;
   .dropdownBtn {
-    padding: 10px;
-    background: #b8b8b8;
-    border: 1px solid #000;
+    padding: 15px 30px;
+    background: #e9f5f0;
+    border-radius: 8px;
     display: flex;
     align-items: center;
     justify-content: space-between;
     cursor: pointer;
+    .plus {
+      img {
+        display: flex;
+        align-items: center;
+      }
+    }
   }
   .dropContent {
+    z-index: 999;
     position: absolute;
     top: 110%;
     padding: 10px;
-    background: #e48686;
+    background: #ceeee3;
+    border-radius: 8px;
     width: 100%;
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
     // left: 0;
     .dropItem {
       padding: 10px;
       cursor: pointer;
+      border-radius: 6px;
     }
     .dropItem:hover {
-      background: #78bdac;
+      background: #7cdac2;
     }
   }
+}
+.year {
+  margin-top: 10px;
+  margin-bottom: 40px;
+}
+.mileage {
+  margin-top: 40px;
+}
+.mileage,
+.year {
+  display: flex;
+  flex-direction: column;
+  label {
+    padding-bottom: 4px;
+  }
+  input {
+    padding: 15px 30px;
+    background: #e9f5f0;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    outline: none;
+    border: none;
+  }
+  input:hover {
+    box-shadow: $shadow;
+  }
+  input:focus {
+    outline: 1px solid $mainColor;
+  }
+}
+.imgSelect {
+  padding: 15px;
+  border-radius: 8px;
+  border: 1px dashed $mainColor;
+  justify-content: space-between;
+  display: flex;
+  margin-bottom: 10px;
+  button {
+    padding: 10px 20px;
+    border-radius: 6px;
+    background: $mainGradient;
+    color: $white;
+    outline: none;
+    border: none;
+    cursor: pointer;
+  }
+  button:hover {
+    outline: 1px solid $mainColor;
+    background: $white;
+    color: $mainColor;
+  }
+}
+.publish {
+  background: $mainGradient;
+  width: 100%;
+  padding: 15px;
+  border: none;
+  border-radius: 8px;
+  color: $white;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  cursor: pointer;
+  font-size: 16px;
+}
+.publish:hover {
+  outline: 1px solid $mainColor;
+  color: $mainColor;
+  background: $white;
+}
+.uploadedImg {
+  width: 100%;
 }

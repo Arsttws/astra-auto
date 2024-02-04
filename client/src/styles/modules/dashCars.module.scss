@@ -1,0 +1,411 @@
+@import "../style.scss";
+
+.wrapper {
+  max-width: 840px;
+  width: 100%;
+  margin: 0 auto;
+  display: flex;
+  gap: 40px;
+}
+.cars {
+  margin: 0 auto;
+  h2 {
+    font-size: 20px;
+    font-family: "Manrope", sans-serif;
+    margin-bottom: 20px;
+  }
+  .singleCar {
+    background: $white;
+    box-shadow: $shadow;
+    border-radius: 10px;
+    padding: 20px;
+    width: 400px;
+    margin-bottom: 20px;
+    .carMain {
+      display: flex;
+      .carImg {
+        display: flex;
+        align-items: center;
+        margin-right: 20px;
+        img {
+          max-width: 120px;
+          max-height: 120px;
+          border-radius: 10px;
+        }
+      }
+      .carInfo {
+        width: 100%;
+        .mainInfo {
+          display: flex;
+          margin-bottom: 20px;
+          p {
+            font-family: "Manrope", sans-serif;
+            font-size: 18px;
+          }
+          .brand {
+            font-weight: 700;
+            margin-right: 5px;
+          }
+        }
+        .addInfo {
+          div {
+            display: flex;
+            margin-bottom: 20px;
+            img {
+              max-width: 32px;
+              margin-right: 15px;
+            }
+            p {
+              display: flex;
+              align-items: center;
+              font-size: 16px;
+            }
+          }
+        }
+      }
+    }
+    .average {
+      display: flex;
+      p {
+        span {
+          font-weight: bold;
+          margin-left: 6px;
+        }
+      }
+    }
+    .oil {
+      display: flex;
+      p {
+        span {
+          font-weight: bold;
+          margin-left: 6px;
+        }
+      }
+    }
+    .action {
+      margin-top: 10px;
+      display: flex;
+      gap: 10px;
+      .delete {
+        padding: 6px 30px;
+        border: none;
+        background: $dangerGradient;
+        color: $white;
+        border-radius: 6px;
+        cursor: pointer;
+      }
+      .delete:hover {
+        outline: 1px solid $danger;
+        background: $white;
+        color: $danger;
+      }
+      .buy {
+        padding: 6px 20px;
+        text-align: center;
+        font-size: 14px;
+        width: 100%;
+        text-decoration: none;
+        background: $mainGradient;
+        color: $white;
+        border-radius: 6px;
+      }
+      .buy:hover {
+        outline: 1px solid $borderColor;
+        background: $white;
+        color: $borderColor;
+      }
+    }
+  }
+}
+.addCar {
+  display: block;
+  padding: 10px 30px;
+  width: 100%;
+  background: $mainGradient;
+  border-radius: 10px;
+  color: $white;
+  text-decoration: none;
+  text-align: center;
+}
+.addCar:hover {
+  background: $white;
+  color: $dark;
+  outline: 1px solid $mainColor;
+}
+.showMore {
+  display: block;
+  padding: 10px 30px;
+  width: 100%;
+  background: $white;
+  border-radius: 10px;
+  color: $dark;
+  text-decoration: none;
+  text-align: center;
+  outline: none;
+  border: none;
+  margin-bottom: 10px;
+  font-size: 16px;
+  cursor: pointer;
+}
+.showMore:hover {
+  outline: 1px solid $borderColor;
+}
+.rightSide {
+  .fuelPrice {
+    // background: $white;
+    // box-shadow: $shadow;
+    width: 400px;
+    // padding: 20px;
+    border-radius: 10px;
+    // margin-right: 0;
+    // margin-left: auto;
+    .priceHeadline {
+      font-size: 20px;
+      font-family: "Manrope", sans-serif;
+      margin-bottom: 20px;
+    }
+    .fuels {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 20px;
+      .fuel {
+        padding: 15px;
+        padding-top: 20px;
+        border-radius: 8px;
+        justify-content: space-between;
+        display: flex;
+        align-items: end;
+        box-shadow: $shadow;
+      }
+      .price {
+        font-size: 22px;
+        margin-top: 20px;
+      }
+    }
+    // .dt {
+    //   outline: 2px solid $danger;
+    // }
+    // .ai92 {
+    //   outline: 2px solid #bee21c;
+    // }
+    // .ai95 {
+    //   outline: 2px solid #22a308;
+    // }
+    // .ai98 {
+    //   outline: 2px solid #1883ca;
+    // }
+    // .adBlue {
+    //   outline: 2px solid #28c0db;
+    // }
+    // .gas {
+    //   outline: 2px solid #3be76f;
+    // }
+  }
+}
+
+.modal {
+  background: $white;
+  border-radius: 0.5em;
+  box-shadow: 0 0 20px 12px rgba(152, 165, 164, 0.452);
+
+  z-index: 9999;
+  left: 50%;
+  width: 100%;
+  position: fixed;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  width: 30em;
+  text-align: left;
+  height: 300px;
+  display: flex;
+  flex-direction: column;
+  padding: 20px;
+  .modalContainer {
+    .closeModal {
+      display: flex;
+      margin-left: auto;
+      margin-right: 0;
+      border: none;
+      border-radius: 10px;
+      background: transparent;
+      margin-bottom: 20px;
+      cursor: pointer;
+      img {
+        padding: 10px;
+      }
+    }
+    .closeModal:hover {
+      background: #dfdfdf;
+    }
+    .interaction {
+      justify-content: space-between;
+      display: flex;
+      margin-top: 60px;
+      gap: 20px;
+      button {
+        padding: 10px;
+        border: none;
+        border-radius: 6px;
+        font-size: 16px;
+        width: 100%;
+        text-align: center;
+        font-weight: 400;
+        cursor: pointer;
+      }
+      button:first-child {
+        background: $dangerGradient;
+        color: $white;
+      }
+      button:first-child:hover {
+        background: $white;
+        color: $danger;
+        outline: 1px solid $danger;
+      }
+      button:last-child:hover {
+        background: $mainGradient;
+        color: $white;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 1280px) {
+  .wrapper {
+    margin-top: 40px;
+    max-width: 600px;
+    .userCarsAll {
+      margin: 0 auto;
+      .showMore {
+        max-width: 400px;
+      }
+      .addCar {
+        max-width: 400px;
+      }
+      .cars {
+        .singleCar {
+          max-width: 360px;
+        }
+      }
+    }
+    .rightSide {
+      margin: 0 auto;
+      .fuelPrice {
+        width: 100%;
+        .fuels {
+          display: flex;
+          flex-direction: column;
+        }
+      }
+    }
+  }
+}
+@media screen and (max-width: 966px) {
+  .wrapper {
+    flex-direction: column;
+    .userCarsAll {
+      .showMore {
+        width: 100%;
+        max-width: none;
+      }
+      .addCar {
+        max-width: none;
+        width: 100%;
+      }
+      .cars {
+        max-width: none;
+        .singleCar {
+          width: 100%;
+          max-width: none;
+          .carMain {
+            display: flex;
+            flex-direction: column;
+            .carImg {
+              width: 100%;
+              margin-right: 0;
+              margin-bottom: 20px;
+              img {
+                max-width: none;
+                max-height: none;
+                width: 100%;
+              }
+            }
+          }
+        }
+      }
+    }
+    .rightSide {
+      .fuelPrice {
+        width: 100%;
+        .fuels {
+          width: 100%;
+          .fuel {
+            width: 100%;
+          }
+        }
+      }
+    }
+  }
+}
+@media screen and (max-width: 768px) {
+  .modal {
+    width: 90%;
+    height: auto;
+  }
+}
+@media screen and (max-width: 480px) {
+  .wrapper {
+    .userCarsAll {
+      .showMore {
+        width: 100%;
+      }
+      .addCar {
+        width: 100%;
+      }
+      .cars {
+        .singleCar {
+          width: 100%;
+          .carMain {
+            display: flex;
+            flex-direction: column;
+            .carImg {
+              width: 100%;
+              margin-right: 0;
+              margin-bottom: 20px;
+              img {
+                max-width: none;
+                max-height: none;
+                width: 100%;
+              }
+            }
+          }
+        }
+      }
+    }
+    .rightSide {
+      .fuelPrice {
+        width: 100%;
+        .fuels {
+          grid-template-columns: repeat(1, 1fr);
+          width: 100%;
+          .fuel {
+            width: 100%;
+          }
+        }
+      }
+    }
+  }
+}
+@media screen and (max-width: 380px) {
+  .wrapper {
+    max-width: 90%;
+    .userCarsAll {
+      .cars {
+        .singleCar {
+          .action {
+            flex-direction: column;
+          }
+        }
+      }
+    }
+  }
+}

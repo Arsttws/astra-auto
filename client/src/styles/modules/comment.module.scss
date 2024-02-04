@@ -1,3 +1,106 @@
-.activeLike {
-    color: aqua;
+@import "../style.scss";
+
+.singleComment {
+  margin-bottom: 30px;
+  .author {
+    display: flex;
+    align-items: center;
+    img {
+      width: 42px;
+      border-radius: 50px;
+      margin-right: 10px;
+    }
+    div {
+      display: flex;
+      flex-direction: column;
+      .time {
+        font-size: 14px;
+        color: #acacac;
+      }
+    }
+  }
+  .action {
+    .editArea {
+      textarea {
+        resize: none;
+        width: 600px;
+        padding: 20px;
+        color: $dark;
+        border: none;
+        outline: none;
+        background: rgba(200, 245, 238, 0.3764705882);
+        border-radius: 10px;
+        margin-top: 20px;
+      }
+      button {
+        padding: 10px 20px;
+        border: none;
+        border-radius: 8px;
+        cursor: pointer;
+      }
+      .save {
+        margin-right: 10px;
+      }
+      button:hover {
+        background: $mainColor;
+        color: $white;
+      }
+    }
+    .content {
+      padding: 10px;
+      margin: 20px;
+      display: flex;
+      flex-direction: column;
+      position: relative;
+      .commentContent {
+        font-size: 15px;
+        padding: 20px 10px;
+        padding-top: 0;
+        word-wrap: break-word;
+        display: block;
+        max-width: 600px;
+      }
+      .change {
+        display: flex;
+        button {
+          padding: 10px 20px;
+          border: none;
+          cursor: pointer;
+          border-radius: 8px;
+          margin: 10px;
+          margin-bottom: 0;
+        }
+        .edit:hover {
+          background: $mainGradient;
+          color: $white;
+        }
+        .delete:hover {
+          background: $dangerGradient;
+          color: $white;
+        }
+      }
+    }
+    .content::before {
+      top: 0;
+      left: 0;
+      position: absolute;
+      border-left: 2px dashed $mainColor;
+      height: 100%;
+      content: "";
+    }
+    .interaction {
+      display: flex;
+      margin-left: 10px;
+      .like {
+        background: none;
+        border: none;
+        cursor: pointer;
+        margin-right: 5px;
+      }
+      .like:hover {
+        transform: translateY(-2px);
+        transition: all ease-in-out 0.2s;
+      }
+    }
+  }
 }

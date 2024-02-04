@@ -1,0 +1,119 @@
+@import "../style.scss";
+.wrapper {
+  max-width: 940px;
+  width: 100%;
+  margin: 0 auto;
+}
+table {
+  width: 100%;
+  border-spacing: 20px;
+  thead {
+    p {
+      text-align-last: left;
+      font-weight: normal;
+    }
+  }
+  tbody {
+    tr {
+      .id {
+        max-width: 140px;
+      }
+    }
+    th {
+      text-align: left;
+      font-weight: normal;
+      max-width: 300px;
+      word-wrap: break-word;
+      .delete {
+        padding: 10px 20px;
+        background: $dangerGradient;
+        border: none;
+        border-radius: 8px;
+        cursor: pointer;
+        color: $white;
+      }
+      .delete:hover {
+        color: $danger;
+        background: $white;
+        outline: 1px solid $danger;
+      }
+    }
+  }
+}
+.modal {
+  background: $white;
+  border-radius: 0.5em;
+  box-shadow: 0 0 20px 12px rgba(152, 165, 164, 0.452);
+
+  z-index: 9999;
+  left: 50%;
+  width: 100%;
+  position: fixed;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  width: 30em;
+  text-align: left;
+  height: 300px;
+  display: flex;
+  flex-direction: column;
+  padding: 20px;
+  .modalContainer {
+    .closeModal {
+      display: flex;
+      margin-left: auto;
+      margin-right: 0;
+      border: none;
+      border-radius: 10px;
+      background: transparent;
+      margin-bottom: 20px;
+      cursor: pointer;
+      img {
+        padding: 10px;
+      }
+    }
+    .closeModal:hover {
+      background: #dfdfdf;
+    }
+    .interaction {
+      justify-content: space-between;
+      display: flex;
+      margin-top: 60px;
+      gap: 20px;
+      button {
+        padding: 10px;
+        border: none;
+        border-radius: 6px;
+        font-size: 16px;
+        width: 100%;
+        text-align: center;
+        font-weight: 400;
+        cursor: pointer;
+      }
+      button:first-child {
+        background: $dangerGradient;
+        color: $white;
+      }
+      button:first-child:hover {
+        background: $white;
+        color: $danger;
+        outline: 1px solid $danger;
+      }
+      button:last-child:hover {
+        background: $mainGradient;
+        color: $white;
+      }
+    }
+  }
+}
+@media screen and (max-width: 1280px) {
+  .wrapper {
+    margin: 0 auto;
+    overflow-x: scroll;
+  }
+}
+@media screen and (max-width: 768px) {
+  .modal {
+    width: 90%;
+    height: auto;
+  }
+}

@@ -1,57 +1,67 @@
 @import "../style.scss";
 
-aside{
-    min-width: 320px;
-    .profileLink{
-        display: flex;
-        padding: 10px;
-        max-width: 200px;
-        width: 100%;
-        border-radius: .4rem;
-        margin-bottom: 10px;
-        text-decoration: none;
-        color: $dark;
-        .userLabel{
-            display: none;
-        }
-        .adminLabel{
-            margin-right: 0;
-            margin-left: auto;
-            display: flex;
-            align-items: center;
-            font-family: 'Mulish', sans-serif;
-            padding: 0 6px;
-            background: #b8b8b8;
-            color: $white;
-            border-radius: 4px;
-            font-size: 14px;
-        }
+aside {
+  min-width: 320px;
+  .profileLink {
+    display: flex;
+    padding: 10px;
+    max-width: 200px;
+    width: 100%;
+    border-radius: 0.4rem;
+    margin-bottom: 10px;
+    text-decoration: none;
+    color: $dark;
+    .userLabel {
+      display: none;
     }
-    .profileLink.active{
-        background-color: #ddebee;
+    .adminLabel {
+      margin-right: 0;
+      margin-left: auto;
+      display: flex;
+      align-items: center;
+      font-family: "Manrope", sans-serif;
+      padding: 0 6px;
+      background: #b8b8b8;
+      color: $white;
+      border-radius: 4px;
+      font-size: 14px;
     }
-    .profileLink:hover{
-        background: $mainGradient;
-        color: $white;
+  }
+  .profileLink.active {
+    background-color: #84e2dd3f;
+  }
+  .profileLink:hover {
+    background: $mainGradient;
+    color: $white;
+  }
+  button {
+    background: transparent;
+    display: flex;
+    padding: 10px;
+    max-width: 200px;
+    width: 100%;
+    border-radius: 0.4rem;
+    text-decoration: none;
+    border: none;
+    font-size: 16px;
+    color: $danger;
+    font-weight: 600;
+    margin-top: 100px;
+  }
+  button:hover {
+    background: $dangerGradient;
+    color: $white;
+    cursor: pointer;
+    font-weight: 500;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .dashboardWrapper {
+    .sidebar {
+      aside {
+        min-width: 0;
+      }
     }
-    button{
-        background: $white;
-        display: flex;
-        padding: 10px;
-        max-width: 200px;
-        width: 100%;
-        border-radius: .4rem;
-        text-decoration: none;
-        border: none;
-        font-size: 16px;
-        color: $danger;
-        font-weight: 600;
-        margin-top: 100px;
-    }
-    button:hover{
-        background: $dangerGradient;
-        color: $white;
-        cursor: pointer;
-        font-weight: 500;
-    }
+  }
 }

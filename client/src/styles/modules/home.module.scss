@@ -1,0 +1,122 @@
+@import "../style.scss";
+
+.wrapper {
+  max-width: 1280px;
+  width: 100%;
+  margin: 0 auto;
+  .advantage {
+    display: flex;
+    gap: 40px;
+    margin-bottom: 120px;
+    .info {
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      a {
+        margin: auto;
+        margin-bottom: 0;
+        padding: 15px;
+        text-decoration: none;
+        width: 100%;
+        text-align: center;
+        align-items: center;
+        border-radius: 10px;
+        border: 1px solid $borderColor;
+        color: $borderColor;
+      }
+      a:hover {
+        background: $mainGradient;
+        color: $white;
+        border: none;
+      }
+      h2 {
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        margin-bottom: 0;
+        margin-top: auto;
+        font-size: 32px;
+        font-family: "Manrope", sans-serif;
+        max-width: 500px;
+        span {
+          font-family: "Montserrat", sans-serif;
+          position: absolute;
+          font-size: 200px;
+          font-weight: 900;
+          bottom: -42px;
+          color: #40c3a4;
+          opacity: 0.2;
+        }
+      }
+    }
+    .image {
+      margin-right: 0;
+      margin-left: auto;
+    }
+  }
+}
+
+@media screen and (max-width: 1280px) {
+  .wrapper {
+    max-width: 768px;
+    .advantage {
+      .info {
+        h2 {
+          font-size: 24px;
+          span {
+            font-size: 160px;
+          }
+        }
+        a {
+          padding: 12px;
+        }
+      }
+      .image {
+        max-width: 500px;
+        width: 100%;
+        object-fit: cover;
+        img {
+          width: 100%;
+        }
+      }
+    }
+  }
+}
+@media screen and (max-width: 768px) {
+  .wrapper {
+    max-width: 480px;
+    .advantage {
+      flex-direction: column;
+      .info {
+        h2 {
+          font-size: 24px;
+          margin-bottom: 20px;
+          span {
+            font-size: 160px;
+          }
+        }
+        a {
+          padding: 12px;
+        }
+      }
+      .image {
+        max-width: 500px;
+        width: 100%;
+        object-fit: cover;
+        margin-bottom: 60px;
+        img {
+          width: 100%;
+        }
+      }
+    }
+    .first,
+    .third {
+      flex-direction: column-reverse;
+    }
+  }
+}
+@media screen and (max-width: 480px) {
+  .wrapper {
+    max-width: 90%;
+  }
+}

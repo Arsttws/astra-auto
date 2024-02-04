@@ -1,0 +1,115 @@
+@import "../style.scss";
+
+.wrapper {
+  max-width: 1280px;
+  width: 100%;
+  margin: 0 auto;
+  display: flex;
+  .left {
+    width: 240px;
+    padding: 20px;
+    border-right: 1px solid #d4d4d4;
+    form {
+      margin-top: 20px;
+      div {
+        display: flex;
+        flex-direction: column;
+        input,
+        select {
+          padding: 15px;
+          border: none;
+          background: rgba(193, 214, 214, 0.2941176471);
+          border-radius: 10px;
+        }
+        input:focus,
+        select:focus {
+          border: none;
+          outline: none;
+        }
+        label {
+          padding: 4px;
+        }
+      }
+    }
+    button {
+      width: 100%;
+      padding: 10px;
+      border: none;
+      margin-top: 20px;
+      background: $white;
+      cursor: pointer;
+      outline: 1px solid $mainColor;
+      border-radius: 8px;
+    }
+    button:hover {
+      background: $mainGradient;
+      color: $white;
+    }
+  }
+  .right {
+    margin: 0 auto;
+    .posts {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 20px;
+    }
+    .showMore {
+      width: 100%;
+      padding: 10px;
+      border: none;
+      cursor: pointer;
+      border-radius: 10px;
+      //   background: $mainGradient;
+      margin-top: 20px;
+      color: $dark;
+      font-size: 15px;
+    }
+    .showMore:hover {
+      background: $mainColor;
+      color: $white;
+    }
+  }
+}
+@media screen and (max-width: 1280px) {
+  .wrapper {
+    max-width: 768px;
+    flex-direction: column;
+    .left {
+      border: none;
+      width: auto;
+      form {
+        display: flex;
+        gap: 20px;
+        width: 100%;
+        div {
+          width: 100%;
+        }
+      }
+    }
+    .right {
+      .posts {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+  }
+}
+@media screen and (max-width: 768px) {
+  .wrapper {
+    max-width: 480px;
+    .right {
+      .posts {
+        grid-template-columns: repeat(1, 1fr);
+      }
+    }
+  }
+}
+@media screen and (max-width: 480px) {
+  .wrapper {
+    max-width: 90%;
+    .left {
+      form {
+        flex-direction: column;
+      }
+    }
+  }
+}
