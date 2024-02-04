@@ -43,7 +43,7 @@ export default function NewPost() {
             (snapshot.bytesTransferred / snapshot.totalBytes) * 100;
           setImageUploadProgress(progress.toFixed(0));
         },
-        (error) => {
+        () => {
           setImageUploadError("Ошибка загрузки картинки");
           setImageUploadProgress(null);
         },
