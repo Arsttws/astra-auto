@@ -228,6 +228,7 @@ export default function Select() {
             {imageUploadProgress ? (
               <div>
                 <CircularProgressbar
+                  className={styles.progressbar}
                   value={imageUploadProgress}
                   text={`${imageUploadProgress || 0}%`}
                 />

@@ -131,6 +131,7 @@ export default function NewPost() {
             {imageUploadProgress ? (
               <div>
                 <CircularProgressbar
+                  className={styles.progressbar}
                   value={imageUploadProgress}
                   text={`${imageUploadProgress || 0}%`}
                 />

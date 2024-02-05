@@ -89,6 +89,9 @@
   justify-content: space-between;
   display: flex;
   margin-bottom: 10px;
+  .progressbar {
+    background: transparent;
+  }
   button {
     padding: 10px 20px;
     border-radius: 6px;

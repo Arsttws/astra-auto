@@ -56,6 +56,9 @@ h1 {
     border: 2px dashed $borderColor;
     border-radius: 0.3rem;
     margin-bottom: 20px;
+    .progressbar {
+      background: transparent;
+    }
     .chooseImage {
       border: 0;
       outline: none;

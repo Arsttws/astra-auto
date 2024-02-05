@@ -30,6 +30,10 @@ export default function Header() {
     }
   }, [location.search]);
 
+  useEffect(() => {
+    setDropdown(false);
+  }, []);
+
   const handleSignout = async () => {
     try {
       const res = await fetch("/api/user/signout", {
@@ -51,6 +55,8 @@ export default function Header() {
     const urlParams = new URLSearchParams(location.search);
     urlParams.set("searchTerm", searchTerm);
     const searchQuery = urlParams.toString();
+    setDropdown(false);
+
     navigate(`/search?${searchQuery}`);
   };
 

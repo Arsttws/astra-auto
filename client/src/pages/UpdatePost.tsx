@@ -181,8 +181,8 @@ export default function UpdatePost() {
             <p>{imageUploadError}</p>
           </div>
         )}
-            className={styles.uploadedImg}
-        {formData.image && <img src={formData.image} alt="uploaded-img" />}
+           
+        {formData.image && <img className={styles.uploadedImg} src={formData.image} alt="uploaded-img" />}
         <ReactQuill
           className={styles.quill}
 
