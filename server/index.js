@@ -7,7 +7,7 @@ import commentRoutes from "./routes/comment.route.js";
 import carsRoutes from "./routes/car.route.js";
 import cookieParser from "cookie-parser";
 import "dotenv/config";
-import path from "path";
+// import path from "path";
 
 mongoose
   .connect(process.env.DB_CONNECTION)
@@ -18,7 +18,7 @@ mongoose
     console.log(error);
   });
 
-const __dirname = path.resolve();
+// const __dirname = path.resolve();
 
 const app = experess();
 const PORT = process.env.PORT || 8000;
@@ -36,11 +36,11 @@ app.use("/api/post", postRoutes);
 app.use("/api/comment", commentRoutes);
 app.use("/api/car", carsRoutes);
 
-app.use(experess.static(path.join(__dirname, "/client/dist")));
+// app.use(experess.static(path.join(__dirname, "/client/dist")));
 
-app.get("*", (req, res) => {
-  res.sendFile(path.join(__dirname, "client", "dist", "index.html"));
-});
+// app.get("*", (req, res) => {
+//   res.sendFile(path.join(__dirname, "client", "dist", "index.html"));
+// });
 
 app.use((err, req, res, next) => {
   const statusCode = err.statusCode || 500;
