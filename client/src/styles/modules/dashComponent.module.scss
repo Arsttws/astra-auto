@@ -120,8 +120,11 @@
           margin-right: 20px;
         }
         p:nth-child(2) {
-          width: 147px;
           margin-right: 20px;
+        }
+        p:nth-child(2) {
+          margin-left: auto;
+          margin-right: 0;
         }
       }
       .singleUser {
@@ -313,6 +316,9 @@
     .recent {
       width: 100%;
       .recentPosts {
+        width: 100%;
+      }
+      .recentUsers {
         width: 100%;
       }
     }
