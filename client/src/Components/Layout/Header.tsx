@@ -35,6 +35,7 @@ export default function Header() {
   }, []);
 
   const handleSignout = async () => {
+    setDropdown(false);
     try {
       const res = await fetch("/api/user/signout", {
         method: "POST",
@@ -95,9 +96,17 @@ export default function Header() {
               </div>
               <div className={styles.userLinks}>
                 <div className={styles.interact}>
-                  <Link to={"/dashboard?tab=profile"}>Аккаунт</Link>
+                  <Link
+                    to={"/dashboard?tab=profile"}
+                    onClick={() => setDropdown(false)}
+                  >
+                    Аккаунт
+                  </Link>
                   <button
-                    onClick={() => dispatch(toggleTheme())}
+                    onClick={() => {
+                      dispatch(toggleTheme());
+                      setDropdown(false);
+                    }}
                     className={styles.themeHandler}
                   >
                     <img src={moon} alt="changeTheme" />
