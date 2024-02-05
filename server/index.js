@@ -6,8 +6,10 @@ import postRoutes from "./routes/post.route.js";
 import commentRoutes from "./routes/comment.route.js";
 import carsRoutes from "./routes/car.route.js";
 import cookieParser from "cookie-parser";
-import "dotenv/config";
 import path from "path";
+import dotenv from 'dotenv';
+
+dotenv.config();
 
 mongoose
   .connect(process.env.DB_CONNECTION)

@@ -14,6 +14,9 @@ import "react-circular-progressbar/dist/styles.css";
 import { useNavigate, useParams } from "react-router-dom";
 import { useSelector } from "react-redux";
 
+import styles from "../styles/modules/newPost.module.scss";
+
+
 export default function UpdatePost() {
   const navigate = useNavigate();
 
@@ -114,11 +117,16 @@ export default function UpdatePost() {
   };
 
   return (
-    <div className="wrapper">
+    <div className={styles.wrapper}>
+
       <h1>Редактировать статью</h1>
-      <form onSubmit={handleSubmit}>
-        <div className="postMainInfo">
+      <form className={styles.form} onSubmit={handleSubmit}>
+
+      <div className={styles.postMainInfo}>
+
           <input
+            className={styles.postTitle}
+
             type="text"
             id="title"
             placeholder="Название"
@@ -129,6 +137,8 @@ export default function UpdatePost() {
             value={formData.title}
           />
           <select
+            className={styles.category}
+
             name="categories"
             id="category-select"
             onChange={(e) =>
@@ -138,18 +148,22 @@ export default function UpdatePost() {
             required
           >
             <option value="">Выберите категорию</option>
-            <option value="news">Новости</option>
-            <option value="post">Статьи</option>
-            <option value="discount">Акции</option>
+            <option value="Новости">Новости</option>
+            <option value="Статьи">Статьи</option>
+            <option value="Акции">Акции</option>
           </select>
         </div>
-        <div className="imgSelect">
+        <div className={styles.imgSelect}>
+
           <input
+            className={styles.chooseImage}
+
             type="file"
             accept="image/*"
             onChange={(e: any) => setImage(e.target.files[0])}
           />
-          <button onClick={handleImageUpload} disabled={imageUploadProgress}>
+            
+          <button className={styles.addImage} onClick={handleImageUpload} disabled={imageUploadProgress}>
             {imageUploadProgress ? (
               <div>
                 <CircularProgressbar
@@ -167,14 +181,17 @@ export default function UpdatePost() {
             <p>{imageUploadError}</p>
           </div>
         )}
+            className={styles.uploadedImg}
         {formData.image && <img src={formData.image} alt="uploaded-img" />}
         <ReactQuill
+          className={styles.quill}
+
           theme="snow"
           placeholder="Введите текст статьи"
           onChange={(value) => setFormData({ ...formData, content: value })}
           value={formData.content}
         />
-        <button type="submit">Обновить</button>
+        <button className={styles.publish} type="submit">Обновить</button>
         {publishError && (
           <div>
             <p>{publishError}</p>

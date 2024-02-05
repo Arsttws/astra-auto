@@ -54,6 +54,14 @@
           outline: 1px solid $borderColor;
           background: transparent;
         }
+        button:disabled,
+        button[disabled]{
+          background: #b4b4b4;
+          border: none;
+          color: #666666;
+          outline: none;
+          cursor: no-drop;
+        }
         .google {
           display: flex;
           align-items: center;
