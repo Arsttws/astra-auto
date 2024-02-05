@@ -7,7 +7,6 @@ import commentRoutes from "./routes/comment.route.js";
 import carsRoutes from "./routes/car.route.js";
 import cookieParser from "cookie-parser";
 import "dotenv/config";
-
 import path from "path";
 
 mongoose
@@ -22,7 +21,7 @@ mongoose
 const __dirname = path.resolve();
 
 const app = experess();
-const PORT = process.env.PORT;
+const PORT = process.env.PORT || 8000;
 
 app.use(experess.json());
 app.use(cookieParser());
