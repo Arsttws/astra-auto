@@ -1,12 +1,13 @@
 import { useEffect, useState } from "react";
-import { Link, useLocation, useNavigate } from "react-router-dom";
-import PostCard from "../Components/PostCard";
+import { useLocation } from "react-router-dom";
+// import PostCard from "../Components/PostCard";
 
 import styles from "../styles/modules/search.module.scss";
+import UserPostCard from "../Components/UserPostCard";
 
-export default function Search() {
+export default function UsersPosts() {
   const location = useLocation();
-  const navigate = useNavigate();
+  //   const navigate = useNavigate();
 
   const [sidebarData, setSidebarData] = useState<any>({
     searchTerm: "",
@@ -35,7 +36,7 @@ export default function Search() {
     const fetchPosts = async () => {
       setLoading(true);
       const searchQuery = urlParams.toString();
-      const res = await fetch(`/api/post/getposts?${searchQuery}`);
+      const res = await fetch(`/api/post/user/getposts?${searchQuery}`);
       if (!res.ok) {
         setLoading(false);
         return;
@@ -54,29 +55,29 @@ export default function Search() {
     fetchPosts();
   }, [location.search]);
 
-  const handleChange = (e: any) => {
-    if (e.target.id === "searchTerm") {
-      setSidebarData({ ...sidebarData, searchTerm: e.target.value });
-    }
-    if (e.target.id === "sort") {
-      const order = e.target.value || "asc";
-      setSidebarData({ ...sidebarData, sort: order });
-    }
-    if (e.target.id === "category") {
-      const category = e.target.value || "";
-      setSidebarData({ ...sidebarData, category });
-    }
-  };
+  //   const handleChange = (e: any) => {
+  //     if (e.target.id === "searchTerm") {
+  //       setSidebarData({ ...sidebarData, searchTerm: e.target.value });
+  //     }
+  // if (e.target.id === "sort") {
+  //   const order = e.target.value || "asc";
+  //   setSidebarData({ ...sidebarData, sort: order });
+  // }
+  // if (e.target.id === "category") {
+  //   const category = e.target.value || "";
+  //   setSidebarData({ ...sidebarData, category });
+  // }
+  //   };
 
-  const handleSubmit = (e: any) => {
-    e.preventDefault();
-    const urlParams = new URLSearchParams(location.search);
-    urlParams.set("searchTerm", sidebarData.searchTerm);
-    urlParams.set("sort", sidebarData.sort);
-    urlParams.set("category", sidebarData.category);
-    const searchQuery = urlParams.toString();
-    navigate(`/search?${searchQuery}`);
-  };
+  //   const handleSubmit = (e: any) => {
+  //     e.preventDefault();
+  //     const urlParams = new URLSearchParams(location.search);
+  //     urlParams.set("searchTerm", sidebarData.searchTerm);
+  //     urlParams.set("sort", sidebarData.sort);
+  //     urlParams.set("category", sidebarData.category);
+  //     const searchQuery = urlParams.toString();
+  //     navigate(`/search?${searchQuery}`);
+  //   };
 
   const handleShowMore = async () => {
     const numberOfPosts = posts.length;
@@ -84,7 +85,7 @@ export default function Search() {
     const urlParams = new URLSearchParams(location.search);
     urlParams.set("startIndex", startIndex.toString());
     const searchQuery = urlParams.toString();
-    const res = await fetch(`/api/post/getposts?${searchQuery}`);
+    const res = await fetch(`/api/post/user/getposts?${searchQuery}`);
     if (!res.ok) {
       return;
     }
@@ -101,7 +102,7 @@ export default function Search() {
 
   return (
     <div className={styles.wrapper}>
-      <div className={styles.left}>
+      {/* <div className={styles.left}>
         <h2>Искать</h2>
         <form onSubmit={handleSubmit}>
           <div>
@@ -114,34 +115,18 @@ export default function Search() {
               onChange={handleChange}
             />
           </div>
-          {/* <div>
+          <div>
             <label>Сортировать</label>
             <select onChange={handleChange} value={sidebarData.sort} id="sort">
               <option value="desc">Новые</option>
               <option value="asc">Старые</option>
             </select>
-          </div> */}
-          <div>
-            <label>Категория</label>
-            <select
-              onChange={handleChange}
-              value={sidebarData.category}
-              id="category"
-            >
-              <option value="">Все</option>
-              <option value="Новости">Новости</option>
-              <option value="Статьи">Статьи</option>
-              <option value="Акции">Акции</option>
-            </select>
           </div>
         </form>
         <button onClick={handleSubmit} className={styles.save}>
-          Сохранить
+          Искать
         </button>
-        <Link to={"/posts/users"} className={styles.usersPosts}>
-          Пользовательские статьи
-        </Link>
-      </div>
+      </div> */}
       <div className={styles.right}>
         <h1>Результаты поиска:</h1>
         <div className={styles.posts}>
@@ -150,7 +135,7 @@ export default function Search() {
           {loading && <p>Загрузка...</p>}
           {!loading &&
             posts &&
-            posts.map((post) => <PostCard key={post._id} post={post} />)}
+            posts.map((post) => <UserPostCard key={post._id} post={post} />)}
         </div>
         {showMore && (
           <button onClick={handleShowMore} className={styles.showMore}>

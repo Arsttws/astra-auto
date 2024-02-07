@@ -254,9 +254,13 @@ export default function DashProfile() {
         >
           {loading ? "Загрузка..." : "Сохранить"}
         </button>
-        {currentUser.isAdmin && (
+        {currentUser.isAdmin ? (
           <Link to={"/new-post"} className={styles.newPost}>
             <button type="button">Новая статья</button>
+          </Link>
+        ) : (
+          <Link to={"/new-user-post"} className={styles.newPost}>
+            <button type="button">Создать свою статью</button>
           </Link>
         )}
       </form>

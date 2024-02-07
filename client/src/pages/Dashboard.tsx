@@ -9,6 +9,7 @@ import DashComponent from "../Components/DashComponent";
 import DashCars from "../Components/DashCars";
 
 import "../styles/style.scss";
+import DashUserPosts from "../Components/DashUserPosts";
 
 export default function Dashboard() {
   const location = useLocation();
@@ -29,6 +30,7 @@ export default function Dashboard() {
       </div>
       {tab === "profile" && <DashProfile />}
       {tab === "mycars" && <DashCars />}
+      {tab === "userposts" && <DashUserPosts />}
       {tab === "posts" && <DashPosts />}
       {tab === "users" && <DashUsers />}
       {tab === "comments" && <DashComments />}

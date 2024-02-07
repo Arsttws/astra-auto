@@ -59,6 +59,16 @@ export default function DashSidebar() {
       >
         Мои авто
       </Link>
+      {!currentUser.isAdmin && (
+        <Link
+          to={"/dashboard?tab=userposts"}
+          className={`${styles.profileLink} ${
+            tab === "userposts" ? styles.active : ""
+          }`}
+        >
+          Мои статьи
+        </Link>
+      )}
       {currentUser.isAdmin && (
         <>
           <Link

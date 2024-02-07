@@ -14,6 +14,9 @@ import Post from "./pages/Post";
 import ScrollToTop from "./Components/ScrollToTop";
 import Search from "./pages/Search";
 import NewCar from "./Components/NewCar";
+import NewUserPost from "./pages/NewUserPost";
+import UserPost from "./pages/UserPost";
+import UsersPosts from "./pages/UsersPosts";
 
 const App = () => {
   return (
@@ -27,12 +30,15 @@ const App = () => {
         <Route path="/sign-in" element={<SignIn />} />
         <Route path="/sign-up" element={<SignUp />} />
         <Route path="/post/:postSlug" element={<Post />} />
+        <Route path="/user/post/:postSlug" element={<UserPost />} />
         <Route path="/search" element={<Search />} />
+        <Route path="/posts/users" element={<UsersPosts />} />
 
         {/* private routes */}
         <Route element={<PrivateRoute />}>
           <Route path="/dashboard" element={<Dashboard />} />
           <Route path="/add-car" element={<NewCar />} />
+          <Route path="/new-user-post" element={<NewUserPost />} />
         </Route>
 
         {/* admin routes */}

@@ -5,7 +5,7 @@ import { Link } from "react-router-dom";
 import close from "../assets/close.svg";
 import styles from "../styles/modules/dashPosts.module.scss";
 
-export default function DashPosts() {
+export default function DashUserPosts() {
   const { currentUser } = useSelector((state: any) => state.user);
 
   const [userPosts, setUserPosts] = useState<any[]>([]);
@@ -16,7 +16,9 @@ export default function DashPosts() {
   useEffect(() => {
     const fetchPosts = async () => {
       try {
-        const res = await fetch(`/api/post/getposts?userId=${currentUser._id}`);
+        const res = await fetch(
+          `/api/post/user/getposts?userId=${currentUser._id}`
+        );
         const data = await res.json();
         if (res.ok) {
           setUserPosts(data.posts);
@@ -37,7 +39,7 @@ export default function DashPosts() {
     const startIndex = userPosts.length;
     try {
       const res = await fetch(
-        `/api/post/getposts?userId=${currentUser._id}&startIndex=${startIndex}`
+        `/api/post/user/getposts?userId=${currentUser._id}&startIndex=${startIndex}`
       );
       const data = await res.json();
       if (res.ok) {
@@ -55,7 +57,7 @@ export default function DashPosts() {
     setShowModal(false);
     try {
       const res = await fetch(
-        `/api/post/deletepost/${postIdToDelete}/${currentUser._id}`,
+        `/api/post/user/deletepost/${postIdToDelete}/${currentUser._id}`,
         {
           method: "DELETE",
         }
@@ -76,7 +78,7 @@ export default function DashPosts() {
 
   return (
     <div className={styles.wrapper}>
-      {currentUser.isAdmin && userPosts.length > 0 ? (
+      {currentUser && userPosts.length > 0 ? (
         <table className={styles.table}>
           <thead className={styles.postsHead}>
             <tr>
@@ -89,15 +91,15 @@ export default function DashPosts() {
               <th className={styles.postTitle}>
                 <p>Название</p>
               </th>
-              <th className={styles.postCategory}>
+              {/* <th className={styles.postCategory}>
                 <p>Категория</p>
-              </th>
+              </th> */}
               <th className={styles.deletePost}>
                 <p>Удалить</p>
               </th>
-              <th className={styles.editePost}>
+              {/* <th className={styles.editePost}>
                 <p>Редактировать</p>
-              </th>
+              </th> */}
             </tr>
           </thead>
           <tbody className={styles.content}>
@@ -107,14 +109,14 @@ export default function DashPosts() {
                   {new Date(post.updatedAt).toLocaleDateString()}
                 </th>
                 <th className={styles.img}>
-                  <Link to={`/post/${post.slug}`}>
+                  <Link to={`/user/post/${post.slug}`}>
                     <img src={post.image} alt={post.title} />
                   </Link>
                 </th>
                 <th className={styles.title}>
-                  <Link to={`/post/${post.slug}`}>{post.title}</Link>
+                  <Link to={`/user/post/${post.slug}`}>{post.title}</Link>
                 </th>
-                <th>{post.category}</th>
+                {/* <th>{post.category}</th> */}
                 <th>
                   <button
                     onClick={() => {

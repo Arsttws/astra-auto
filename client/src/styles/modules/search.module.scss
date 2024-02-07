@@ -45,6 +45,25 @@
       background: $mainGradient;
       color: $white;
     }
+    .usersPosts {
+      text-decoration: none;
+      width: 100%;
+      display: block;
+      padding: 10px;
+      border: none;
+      margin-top: 20px;
+      background: $white;
+      cursor: pointer;
+      outline: 1px solid $mainColor;
+      border-radius: 8px;
+      font-size: 14px;
+      text-align: center;
+      align-items: center;
+    }
+    .usersPosts:hover {
+      background: $mainGradient;
+      color: $white;
+    }
   }
   .right {
     margin: 0 auto;
