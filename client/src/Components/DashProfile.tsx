@@ -28,9 +28,7 @@ import "../styles/style.scss";
 import styles from "../styles/modules/dashProfile.module.scss";
 
 export default function DashProfile() {
-  const { currentUser, error, loading } = useSelector(
-    (state: any) => state.user
-  );
+  const { currentUser, loading } = useSelector((state: any) => state.user);
   const [imageFile, setImageFile] = useState<any>(null);
   const [imageFileUrl, setImageFileUrl] = useState<any>(null);
   const [imageUploadProgress, setImageUploadProgress] = useState<any>();
@@ -275,7 +273,7 @@ export default function DashProfile() {
       {userUpdateFail && (
         <div className={styles.updateOutput}>{userUpdateFail}</div>
       )}
-      {error && <div className={styles.updateOutput}>{error}</div>}
+      {/* {error && <div className={styles.updateOutput}>{error}</div>} */}
       {showModal && (
         <div className={styles.modal}>
           <div className={styles.modalContainer}>

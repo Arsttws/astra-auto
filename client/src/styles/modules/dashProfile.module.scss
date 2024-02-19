@@ -113,7 +113,6 @@
     background: $white;
     border-radius: 0.5em;
     box-shadow: 0 0 20px 12px rgba(152, 165, 164, 0.452);
-
     z-index: 9999;
     left: 50%;
     width: 100%;
@@ -180,6 +179,16 @@
     .modal {
       width: 90%;
       height: auto;
+    }
+    form {
+      .saveInfo {
+        padding: 15px;
+      }
+      .newPost {
+        button {
+          padding: 15px;
+        }
+      }
     }
   }
 }

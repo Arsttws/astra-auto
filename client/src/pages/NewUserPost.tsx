@@ -90,7 +90,9 @@ export default function NewUserPost() {
       if (res.ok) {
         setIsLoading(false);
         setPublishError(null);
-        navigate("/dashboard?tab=posts");
+        setTimeout(() => {
+          navigate("/dashboard?tab=posts");
+        }, 1000);
         alert("Ваша статья отпралена на модерацию");
       }
     } catch (error) {

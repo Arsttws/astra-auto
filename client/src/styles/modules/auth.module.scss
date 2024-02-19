@@ -21,7 +21,7 @@
           flex-direction: column;
           margin-bottom: 20px;
           input {
-            padding: 10px;
+            padding: 15px;
             width: 280px;
             border-radius: 6px;
             border: none;
@@ -36,6 +36,23 @@
             border: none;
             outline: 1px solid $borderColor;
           }
+        }
+        .passwordInput {
+          display: flex;
+          position: relative;
+          cursor: pointer;
+          .showPassBtn {
+            position: absolute;
+            background: transparent;
+            right: 15px;
+            top: 40px;
+          }
+        }
+        .signinBtn {
+          padding: 12px;
+        }
+        .signupBtn {
+          padding: 14px;
         }
         button {
           text-align: center;
@@ -55,7 +72,7 @@
           background: transparent;
         }
         button:disabled,
-        button[disabled]{
+        button[disabled] {
           background: #b4b4b4;
           border: none;
           color: #666666;
@@ -123,7 +140,9 @@
   .wrapper {
     max-width: 480px;
     min-height: 60vh;
+    display: flex;
     .container {
+      margin: auto;
       .poster {
         display: none;
       }
