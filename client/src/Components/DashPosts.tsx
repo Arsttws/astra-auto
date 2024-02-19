@@ -126,11 +126,11 @@ export default function DashPosts() {
                     Удалить
                   </button>
                 </th>
-                {/* <th>
+                <th>
                   <button className={styles.edit}>
                     <Link to={`/update-post/${post._id}`}>Редактировать</Link>
                   </button>
-                </th> */}
+                </th>
               </tr>
             ))}
           </tbody>

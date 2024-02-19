@@ -16,7 +16,6 @@ import { useSelector } from "react-redux";
 
 import styles from "../styles/modules/newPost.module.scss";
 
-
 export default function UpdatePost() {
   const navigate = useNavigate();
 
@@ -93,7 +92,7 @@ export default function UpdatePost() {
     e.preventDefault();
     try {
       const res = await fetch(
-        `/api/post/updatepost/${formData._id}/${currentUser._id}`,
+        `/api/post/updatepost/${postId}/${currentUser._id}`,
         {
           method: "PUT",
           headers: {
@@ -118,15 +117,11 @@ export default function UpdatePost() {
 
   return (
     <div className={styles.wrapper}>
-
       <h1>Редактировать статью</h1>
       <form className={styles.form} onSubmit={handleSubmit}>
-
-      <div className={styles.postMainInfo}>
-
+        <div className={styles.postMainInfo}>
           <input
             className={styles.postTitle}
-
             type="text"
             id="title"
             placeholder="Название"
@@ -134,17 +129,16 @@ export default function UpdatePost() {
             onChange={(e) =>
               setFormData({ ...formData, title: e.target.value })
             }
-            value={formData.title}
+            value={formData.title || ""}
           />
           <select
             className={styles.category}
-
             name="categories"
             id="category-select"
             onChange={(e) =>
               setFormData({ ...formData, category: e.target.value })
             }
-            value={formData.category}
+            value={formData.category || ""}
             required
           >
             <option value="">Выберите категорию</option>
@@ -154,16 +148,18 @@ export default function UpdatePost() {
           </select>
         </div>
         <div className={styles.imgSelect}>
-
           <input
             className={styles.chooseImage}
-
             type="file"
             accept="image/*"
             onChange={(e: any) => setImage(e.target.files[0])}
           />
-            
-          <button className={styles.addImage} onClick={handleImageUpload} disabled={imageUploadProgress}>
+
+          <button
+            className={styles.addImage}
+            onClick={handleImageUpload}
+            disabled={imageUploadProgress}
+          >
             {imageUploadProgress ? (
               <div>
                 <CircularProgressbar
@@ -181,17 +177,24 @@ export default function UpdatePost() {
             <p>{imageUploadError}</p>
           </div>
         )}
-           
-        {formData.image && <img className={styles.uploadedImg} src={formData.image} alt="uploaded-img" />}
+
+        {formData.image && (
+          <img
+            className={styles.uploadedImg}
+            src={formData.image}
+            alt="uploaded-img"
+          />
+        )}
         <ReactQuill
           className={styles.quill}
-
           theme="snow"
           placeholder="Введите текст статьи"
           onChange={(value) => setFormData({ ...formData, content: value })}
           value={formData.content}
         />
-        <button className={styles.publish} type="submit">Обновить</button>
+        <button className={styles.publish} type="submit">
+          Обновить
+        </button>
         {publishError && (
           <div>
             <p>{publishError}</p>
