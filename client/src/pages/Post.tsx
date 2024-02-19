@@ -82,7 +82,7 @@ export default function Post() {
       <h1>{post && post.title}</h1>
       <div
         dangerouslySetInnerHTML={{ __html: post && post.content }}
-        className="post-content"
+        className={styles.postContent}
       ></div>
       <div className={styles.bottom}>
         <CommentSection postId={post._id} />

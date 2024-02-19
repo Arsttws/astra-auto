@@ -25,11 +25,11 @@ $dangerGradient: linear-gradient(
   box-sizing: border-box;
   font-family: "Nunito Sans", sans-serif;
   ::-webkit-scrollbar {
-    width: 6px;
-    height: 6px;
+    width: 8px;
     background: #dbdbdb;
   }
   ::-webkit-scrollbar-thumb {
+    cursor: pointer;
     border-radius: 20px;
     background: $mainGradient;
   }
