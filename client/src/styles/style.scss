@@ -29,9 +29,16 @@ $dangerGradient: linear-gradient(
     background: #dbdbdb;
   }
   ::-webkit-scrollbar-thumb {
-    cursor: pointer;
     border-radius: 20px;
     background: $mainGradient;
+  }
+}
+.dark .colorProvider {
+  * {
+    ::-webkit-scrollbar {
+      width: 8px;
+      background: #473877;
+    }
   }
 }
 h1 {

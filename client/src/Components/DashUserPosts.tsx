@@ -139,7 +139,9 @@ export default function DashUserPosts() {
           {showMore && <button onClick={handleShowMore}>Показать ещё</button>}
         </table>
       ) : (
-        "Вы еще не опубликовали ни одной статьи"
+        <p>
+          Вы еще не опубликовали ни одной статьи или они находятся на модерации
+        </p>
       )}
       {showModal && (
         <div className={styles.modal}>

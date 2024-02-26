@@ -65,10 +65,10 @@ export default function UserPost() {
     <div className={styles.wrapper}>
       <img src={post && post.image} alt={post.title} className={styles.cover} />
       <div className={styles.shortInfo}>
-          <span>{post && post.username}</span>
-          <span>{post && new Date(post.updatedAt).toLocaleDateString()}</span>
+        <span>{post && post.username}</span>
+        <span>{post && new Date(post.updatedAt).toLocaleDateString()}</span>
         <span>
-          ~ {Number(post.content.length / 1000).toFixed(0)} мин
+          ~ {Number(post.content.length / 2000).toFixed(0)} мин
           {/* {Number((post.content.length / 1000).toFixed(0)) < 5
             ? "минуты"
           : "минут"} */}
